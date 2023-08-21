@@ -39,19 +39,34 @@ calculationStartButton.addEventListener("click", function() {
 })
 
 
+window.addEventListener("DOMContentLoaded", function() {
+    document.getElementById('calculation-form').addEventListener("submit", function(e) {
+        e.preventDefault(); // before the code
+        /* do what you want with the form */
+        
+        // Should be triggered on form submit
+        var calculationAnswer = document.getElementById("calculation").value
+        calculationForm.style.display = "none";
+        calculationSubmitButton.style.display = "none";
+        calculationResult.innerHTML = `Your answer was: ${calculationAnswer} The correct answer is: ${randomMuliplication}`
 
+        surveyDiv.style.display = "block";
+    })
+  });
 
-calculationSubmitButton.addEventListener("click", function() {
-    var calculationAnswer = document.getElementById("calculation").value
-    calculationForm.style.display = "none";
-    calculationSubmitButton.style.display = "none";
-    calculationResult.innerHTML = `Your answer was: ${calculationAnswer} The correct answer is: ${randomMuliplication}`
+// calculationSubmitButton.addEventListener("click", function() {
+//     var calculationAnswer = document.getElementById("calculation").value
 
-    surveyDiv.style.display = "block";
+//     if(calculationAnswer==""){
+//         alert("Calculation must be filled out!")
+//     } else {
+//         calculationForm.style.display = "none";
+//         calculationSubmitButton.style.display = "none";
+//         calculationResult.innerHTML = `Your answer was: ${calculationAnswer} The correct answer is: ${randomMuliplication}`
 
-   
-
-})
+//         surveyDiv.style.display = "block";
+//     }
+// })
 
 var surveySubmitButton = document.getElementById("survey-submit-button")
 surveySubmitButton.addEventListener("click", function() {
@@ -68,7 +83,7 @@ surveySubmitButton.addEventListener("click", function() {
     console.log(JSON.stringify(data))
     window.fs.appendData(data)
 
-    window.location.replace("black.html")
+    window.location.replace("headrest.html")
 })
 
 

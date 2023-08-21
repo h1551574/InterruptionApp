@@ -22,6 +22,11 @@
     <title>Interruption!</title>
   </head>
   <body>
+    <audio autoplay>
+      <source src="./Sounds/notification-sound.ogg" type="audio/ogg">
+      <source src="./Sounds/notification-sound.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
     <section class="section">
       <div class="container">
         <h1 class="title is-1">
@@ -32,12 +37,12 @@
         </p>
         <button class="button" id="calculation-start-button">Start</button>
 
-          <div class="control" id="calculation-form">
+          <form class="control" id="calculation-form">
             <label class="label" for="calculation" id="calculation-label"></label>
-            <input class="input" type="number" id="calculation" name="calculation">
+            <input class="input" type="number" id="calculation" name="calculation" required>
             <br>
             <button class="button" id="calculation-submit-button">Submit</button>
-          </div>
+          </form>
       </div>
 
       <div class="container" id="survey-div">
